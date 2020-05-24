@@ -1,0 +1,109 @@
+* {
+    color: white;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    background-color: #1e1e1e;
+}
+
+.container {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: max-content;
+    background-color: #3c82f4;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+@media (max-width: 700px) {
+    body {
+        margin-top: 0 !important;
+    }
+    .container {
+        width: 95vw !important;
+    }
+    .banner {
+        display: none;
+    }
+}
+
+button {
+    background-color: #3c82f4;
+    border: 0;
+    color: white;
+    font-size: 1rem;
+    border-radius: .3rem;
+    margin: 1.2rem 1rem 0 0;
+    padding: .1rem .7rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(67, 139, 255);
+}
+
+#code {
+    height: 50vh;
+    width: 100%;
+}
+
+.monaco-editor {
+    width: 100%;
+    border-radius: .5rem;
+    border: 1px solid #333333;
+}
+
+.overflow-guard {
+    border-radius: .5rem;
+}
+
+button:hover {
+    background-color: #438bff;
+}
+
+#run::after {
+    content: '봇 실행하기';
+}
+
+button:disabled {
+    background-color: #336ac2;
+    cursor: not-allowed;
+}
+
+#run:disabled::after {
+    content: '봇 실행됨';
+}
+
+#stop::after {
+    content: '봇 정지하기';
+}
+
+#stop:disabled::after {
+    content: '봇 정지됨';
+}
+
+#stop:disabled {
+    background-color: #ff6348;
+}
+
+#stop:hover {
+    background-color: #ff3a17;
+}
+
+#stop {
+    background-color: #ff4e2e;
+}
