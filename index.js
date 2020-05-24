@@ -1,9 +1,14 @@
 let client = new Discord.Client()
 let editor
 let destroy
+if (localStorage.getItem('token') == null) {
+    localStorage.setItem('token', prompt('토큰을 입력해주세요!'))
+}
+
+let token = localStorage.getItem('token')
 
 let compile = async value => {
-    eval(`${value.replace(/<% token %>/gi, (await (await fetch('config.json')).json()).token)}\ndestroy = () => client.destroy()`)
+    eval(`${value.replace(/<% token %>/gi, token)}\ndestroy = () => client.destroy()`)
 }
 
 let parseHTML = (html) => {
